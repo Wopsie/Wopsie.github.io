@@ -2,7 +2,7 @@ var start = {
 
 	preload : function()
 	{
-		this.scaleStage();
+		//this.scaleStage();
 		game.state.start('gameScene');
 	},
 
@@ -25,6 +25,7 @@ var start = {
 	{
 		if (this.game.device.desktop)        
 		{            
+			console.log("playing on desktop");
 			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;            
 			this.scale.minWidth = worldWidth/2;            
 			this.scale.minHeight = worldHeight/2;            
@@ -34,7 +35,8 @@ var start = {
 			this.scale.pageAlignVertically = true;            
 			this.scale.setScreenSize(true);        
 		}else{            
-			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;            
+			console.log("playing on mobile");
+			this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;            
 			this.scale.minWidth = worldWidth/2;            
 			this.scale.minHeight = worldHeight/2;            
 			this.scale.maxWidth = 2048; 
