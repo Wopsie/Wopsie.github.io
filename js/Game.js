@@ -20,7 +20,6 @@ var gameScene = {
 		square = 15;
 		//player speed
 		speed = 0;
-
 		//player movement start
 		playerMovement.Start();
 
@@ -40,5 +39,11 @@ var gameScene = {
 		//player movement update (check for input);
 		playerMovement.Update();
 		snakeCollision.Collision();
+	},
+
+	restart : function()
+	{
+		console.log('OUT OF BOUNDS');
+		game.state.start('start');
 	}
 }

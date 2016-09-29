@@ -2,7 +2,7 @@ var start = {
 
 	preload : function()
 	{
-		this.scaleStage();
+		//this.scaleStage();
 		game.state.start('gameScene');
 	},
 
@@ -35,10 +35,9 @@ var start = {
 			this.scale.pageAlignVertically = true;            
 			this.scale.setScreenSize(true);        
 		}
-
-		/*else{            
+		else{            
 			console.log("playing on mobile");
-			this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;            
+			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;            
 			this.scale.minWidth = worldWidth/2;            
 			this.scale.minHeight = worldHeight/2;            
 			this.scale.maxWidth = 2048; 
@@ -53,6 +52,6 @@ var start = {
 			this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);            
 			this.scale.setScreenSize(true);        
 		}
-		*/
+		
 	}
 }

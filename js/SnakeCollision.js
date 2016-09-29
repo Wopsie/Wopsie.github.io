@@ -24,8 +24,11 @@ var snakeCollision = {
 
 	BoundsCollision : function(head)
 	{
+		//=== TO ADD===
+		//PHASER BASED BOUNDS COLLISION SO THAT IT SCALES CORRECTLY
+
 		//check if snake is going off screen and out of bounds
-		if(head.x >= 600 || head.x < 0 || head.y >= 450 || head.y < 0)
+		if(head.x >= window.screen.availWidth - 15 || head.x < 0 || head.y >= window.screen.availHeight - 90 - 125 || head.y < 0)
 		{
 			console.log("HIT THE WALL");
 			game.state.start('start');
