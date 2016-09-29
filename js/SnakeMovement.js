@@ -83,7 +83,7 @@ var playerMovement = {
 	IncreaseLength : function()
 	{
 		if(newBlock == true){
-			player.unshift(game.add.sprite(prevLastBlockXPos, prevLastBlockYPos, 'player'));
+			player.unshift(game.add.sprite(prevLastBlockXPos, prevLastBlockYPos, 'playerSprite'));
 			newBlock = false;
 		}
 	}

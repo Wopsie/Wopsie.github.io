@@ -2,6 +2,8 @@ var start = {
 
 	preload : function()
 	{
+		resizeGame.Resize();
+
 		//this.scaleStage();
 		game.state.start('gameScene');
 	},
