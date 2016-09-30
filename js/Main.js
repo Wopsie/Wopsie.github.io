@@ -1,5 +1,5 @@
 var worldWidth = 600;
-var worldHeight = 450;
+var worldHeight = 420;
 
 //window.screen.availWidth - 15, window.screen.availHeight - 90
 

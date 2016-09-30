@@ -1,7 +1,5 @@
 var swipeStartX, swipeStartY, swipeEndX, swipeEndY, deltaX, deltaY, swipeDirection;
 var checkNewTouch = true;
-//var startVector2 = new Phaser.Point();
-//var endVector2 = new Phaser.Point();
 
 var swipes = {
 
@@ -35,25 +33,17 @@ var swipes = {
 
 	StartSwipe : function()
 	{
-		//swipeStartX = game.input.pointer1.x;
-		//swipeStartY = game.input.pointer1.y;
-
 		swipeStartX = game.input.pointer1.x;
 		swipeStartY = game.input.pointer1.y;
 
-		//startVector2.add(swipeStartX, swipeStartY);
 		console.log(swipeStartX, swipeStartY);
 	},
 
 	EndSwipe : function()
 	{
-		//swipeEndX = game.input.pointer1.x;
-		//swipeEndY = game.input.pointer1.y;
-
 		swipeEndX = game.input.pointer1.x;
 		swipeEndY = game.input.pointer1.y;
 
-		//endVector2.add(swipeEndX, swipeEndY);
 		console.log(swipeEndX, swipeEndY);
 
 		this.CalcDelta();
