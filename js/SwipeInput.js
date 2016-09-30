@@ -17,7 +17,7 @@ var swipes = {
 			food.SpawnFood();
 		}
 
-		if(game.input.pointer1.isUp)
+		if(!game.input.pointer1.isDown)
 		{
 			game.add.sprite(game.input.pointer1.x, game.input.pointer1.y, 'playerSprite');
 		}
