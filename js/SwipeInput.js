@@ -19,7 +19,7 @@ var swipes = {
 
 		if(game.input.pointer1.isUp)
 		{
-			food.SpawnFood();
+			game.add.sprite(200, 200, 'playerSprite');
 		}
 	}
 }
