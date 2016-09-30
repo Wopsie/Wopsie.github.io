@@ -9,9 +9,12 @@ var swipes = {
 
 	UpdateSwipes : function()
 	{
-		console.log(game.input.pointer1.x);
+		if(game.input.pointer1.x != -1 && game.input.pointer1.y != -1)
+		{
+			game.add.sprite(game.input.pointer1.x, game.input.pointer1.y,'foodSprite');
+		}
 
 
-		game.add.sprite(game.input.pointer1.x, game.input.pointer1.y,'foodSprite');
+		console.log(game.input.pointer1.x, game.input.pointer1.y);
 	}
 }
