@@ -1,3 +1,9 @@
 body{
 	margin-top: 0px;
+	
+}
+canvas{
+    top: 0;
+    left: 0;
+    position: absolute;
 }
