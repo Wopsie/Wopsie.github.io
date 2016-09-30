@@ -16,5 +16,10 @@ var swipes = {
 			console.log("TOUCHED");
 			food.SpawnFood();
 		}
+
+		if(game.input.pointer1.isUp)
+		{
+			food.SpawnFood();
+		}
 	}
 }
