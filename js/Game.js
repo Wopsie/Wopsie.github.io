@@ -14,7 +14,7 @@ var gameScene = {
 
 	create : function()
 	{
-		swipes.StartSwipes();
+		swipes.Start();
 
 		//make array for the multiple sprites of the player
 		player = [];
@@ -42,11 +42,9 @@ var gameScene = {
 		
 		//player movement update (check for input);
 
-		swipes.UpdateSwipes();
+		swipes.Update();
 
 		playerMovement.Update();
 		snakeCollision.Collision();
 	}
-
-	
 }

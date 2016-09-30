@@ -24,13 +24,9 @@ var snakeCollision = {
 
 	BoundsCollision : function(head)
 	{
-
-		console.log(game.width);
-
 		//check if snake is going off screen and out of bounds
 		if(head.x >= game.width || head.x < 0 || head.y >= game.height || head.y < 0)
 		{
-			console.log("HIT THE WALL");
 			//game.state.start('start');
 			this.restart();
 		}
@@ -42,7 +38,6 @@ var snakeCollision = {
 		for (var i = 0; i < player.length - 1; i++) {
 			if(head.x == player[i].x && head.y == player[i].y)
 			{
-				console.log('YOU PLAYED YOURSELF');
 				game.state.start('start');
 			}
 		}
@@ -50,7 +45,6 @@ var snakeCollision = {
 
 	restart : function()
 	{
-		console.log('OUT OF BOUNDS');
 		game.state.start('start');
 	}
 }

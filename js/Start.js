@@ -26,7 +26,6 @@ var start = {
 
 	ScaleStage : function()
 	{
-		console.log("playing on desktop");
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;            
 		this.scale.minWidth = worldWidth/2;            
 		this.scale.minHeight = worldHeight/2;            
