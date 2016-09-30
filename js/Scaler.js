@@ -2,20 +2,14 @@ var resizeGame = {
 
 	Resize : function()
 	{
-		console.log("Scaling");
-
-		var width = window.screen.width;
-		var height = window.screen.height;
-
-		game.width = width;
-		game.height = height;
-
-		game.stage.bounds.width = width;
-		game.stage.bounds.height = height;
-
-		if(game.renderType === Phaser.WEBGL)
-		{
-			game.renderer.resize(width, height);
-		}
+		console.log("playing on desktop");
+			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;            
+			this.scale.minWidth = worldWidth/2;            
+			this.scale.minHeight = worldHeight/2;            
+			this.scale.maxWidth = worldWidth*(window.screen.availWidth / window.innerWidth);            
+			this.scale.maxHeight = worldHeight* (window.screen.availHeight / window.innerHeight);            
+			this.scale.pageAlignHorizontally = true;            
+			this.scale.pageAlignVertically = true;            
+			this.scale.setScreenSize(true);
 	}
 }

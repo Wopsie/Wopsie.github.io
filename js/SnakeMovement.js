@@ -24,13 +24,13 @@ var playerMovement = {
 
 	ReadInput : function()
 	{
-		if(cursors.left.isDown){
+		if(cursors.left.isDown && direction != 'right'){
 			directionChange = 'left';
-		}else if(cursors.right.isDown){
+		}else if(cursors.right.isDown && direction != 'left'){
 			directionChange = 'right';
-		}else if(cursors.up.isDown){
+		}else if(cursors.up.isDown && direction != 'down'){
 			directionChange = 'up';
-		}else if(cursors.down.isDown){
+		}else if(cursors.down.isDown && direction != 'up'){
 			directionChange = 'down';
 		}
 	},
