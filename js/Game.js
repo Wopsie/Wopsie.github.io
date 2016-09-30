@@ -36,7 +36,7 @@ var gameScene = {
 
 	update : function()
 	{
-		resizeGame.Resize();
+		//resizeGame.Resize();
 		
 		//player movement update (check for input);
 		playerMovement.Update();
