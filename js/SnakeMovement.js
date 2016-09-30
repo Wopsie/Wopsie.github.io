@@ -5,6 +5,7 @@ var playerMovement = {
 	Start : function()
 	{
 		Input.GetKeyboardInput();
+		//swipes.GetSwipeInput();
 
 		newBlock = false;
 		//direction player is moving in
@@ -18,12 +19,14 @@ var playerMovement = {
 	//gets called in update method of game.js
 	Update : function()
 	{
+		swipes.Update();
 		this.ReadInput();
 		this.MoveSnake();
 	},
 
 	ReadInput : function()
 	{
+		//keyboard input
 		if(cursors.left.isDown && direction != 'right'){
 			directionChange = 'left';
 		}else if(cursors.right.isDown && direction != 'left'){
@@ -32,6 +35,24 @@ var playerMovement = {
 			directionChange = 'up';
 		}else if(cursors.down.isDown && direction != 'up'){
 			directionChange = 'down';
+		}
+
+		//mobile touch input
+		if(swipeDirection)
+		{
+			if(swipeDirection == 'left' && direction != 'right')
+			{
+				directionChange = 'left';
+			}else if(swipeDirection == 'right' && direction != 'left')
+			{
+				directionChange = 'right';
+			}else if(swipeDirection == 'up' && direction != 'down')
+			{
+				directionChange = 'up';
+			}else if (swipeDirection == 'down' && direction != 'up')
+			{
+				directionChange = 'down';
+			}
 		}
 	},
 

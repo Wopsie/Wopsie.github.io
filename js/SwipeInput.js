@@ -1,15 +1,9 @@
-var swipeStartX, swipeStartY, swipeEndX, swipeEndY, checkNewTouch, deltaX, deltaY;
+var swipeStartX, swipeStartY, swipeEndX, swipeEndY, deltaX, deltaY, swipeDirection;
+var checkNewTouch = true;
 //var startVector2 = new Phaser.Point();
 //var endVector2 = new Phaser.Point();
 
 var swipes = {
-
-	//pointer1 default position = -1x, -1y
-
-	Start : function()
-	{
-		checkNewTouch = true;
-	},
 
 	Update : function()
 	{
@@ -18,7 +12,7 @@ var swipes = {
 		if(checkNewTouch == true)
 		{
 			//change mousePointer to pointer1
-			if(game.input.mousePointer.isDown)
+			if(game.input.pointer1.isDown)
 			{
 				//start recording the initiated swipe
 				checkNewTouch = false;
@@ -27,10 +21,10 @@ var swipes = {
 				this.StartSwipe();
 			}else
 			{
-				
+				//console.log("NO TOUCH");
 			}
 		}else{
-			if(!game.input.mousePointer.isDown)
+			if(!game.input.pointer1.isDown)
 			{
 				checkNewTouch = true;
 				console.log('NO TOUCH');
@@ -44,11 +38,11 @@ var swipes = {
 		//swipeStartX = game.input.pointer1.x;
 		//swipeStartY = game.input.pointer1.y;
 
-		swipeStartX = game.input.mousePointer.x;
-		swipeStartY = game.input.mousePointer.y;
+		swipeStartX = game.input.pointer1.x;
+		swipeStartY = game.input.pointer1.y;
 
 		//startVector2.add(swipeStartX, swipeStartY);
-		console.log(swipeStartX);
+		console.log(swipeStartX, swipeStartY);
 	},
 
 	EndSwipe : function()
@@ -56,11 +50,11 @@ var swipes = {
 		//swipeEndX = game.input.pointer1.x;
 		//swipeEndY = game.input.pointer1.y;
 
-		swipeEndX = game.input.mousePointer.x;
-		swipeEndY = game.input.mousePointer.y;
+		swipeEndX = game.input.pointer1.x;
+		swipeEndY = game.input.pointer1.y;
 
 		//endVector2.add(swipeEndX, swipeEndY);
-		console.log(swipeEndX);
+		console.log(swipeEndX, swipeEndY);
 
 		this.CalcDelta();
 	},
@@ -73,5 +67,61 @@ var swipes = {
 		deltaY = swipeStartY - swipeEndY;
 
 		console.log(deltaX, deltaY);
+
+		this.DetermineDirection();
+	},
+
+	DetermineDirection : function()
+	{
+		//work out the general directions of the swipe,
+		//if it went up or down, or left or right
+
+		//if the swipe went at all to the right on the X axis
+		if(deltaX < 0)
+		{
+			var horizontalLength = -deltaX;
+		}else
+		{//if the swipe went at all to the left on the X axis
+			var horizontalLength = deltaX;
+		}
+
+		//if the swipe went at all downwards
+		if(deltaY < 0)
+		{
+			var verticalLength = -deltaY;
+		}else
+		{//if swipe went at all upwards
+			var verticalLength = deltaY;
+		}
+
+		//check in which direction the most distance was travled by the swipe
+		//if horizontal distance is greater than vertical distance, the general direction 
+		//swiped in can only have been left or right.
+		if(horizontalLength >= verticalLength)
+		{
+			if(deltaX < 0)
+			{
+				console.log('RIGHT');
+				swipeDirection = 'right';
+				return 'right';
+			}else{
+				console.log('LEFT');
+				swipeDirection = 'left';
+				return 'left';
+			}
+		}
+		else
+		{
+			if(deltaY < 0)
+			{
+				console.log('DOWN');
+				swipeDirection = 'down';
+				return 'down';
+			}else{
+				console.log('UP');
+				swipeDirection = 'up';
+				return 'up';
+			}
+		}
 	}
 }

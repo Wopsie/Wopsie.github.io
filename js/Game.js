@@ -14,8 +14,6 @@ var gameScene = {
 
 	create : function()
 	{
-		swipes.Start();
-
 		//make array for the multiple sprites of the player
 		player = [];
 		//size of the "grid" square
