@@ -14,6 +14,8 @@ var gameScene = {
 
 	create : function()
 	{
+		swipes.StartSwipes();
+
 		//make array for the multiple sprites of the player
 		player = [];
 		//size of the "grid" square
@@ -39,6 +41,9 @@ var gameScene = {
 		//resizeGame.Resize();
 		
 		//player movement update (check for input);
+
+		swipes.UpdateSwipes();
+
 		playerMovement.Update();
 		snakeCollision.Collision();
 	}
