@@ -19,7 +19,7 @@ var swipes = {
 
 		if(game.input.pointer1.isUp)
 		{
-			game.add.sprite(200, 200, 'playerSprite');
+			game.add.sprite(game.input.pointer1.x, game.input.pointer1.y, 'playerSprite');
 		}
 	}
 }
