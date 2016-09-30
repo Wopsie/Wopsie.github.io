@@ -2,6 +2,8 @@ var swipeInput;
 
 var swipes = {
 
+	//pointer1 default = -1x, -1y
+
 	StartSwipes : function()
 	{
 		game.input.addPointer();
@@ -9,12 +11,10 @@ var swipes = {
 
 	UpdateSwipes : function()
 	{
-		if(game.input.pointer1.x != -1 && game.input.pointer1.y != -1)
+		if(game.input.pointer1.isDown)
 		{
-			game.add.sprite(game.input.pointer1.x, game.input.pointer1.y,'foodSprite');
+			console.log("TOUCHED");
+			food.SpawnFood();
 		}
-
-
-		console.log(game.input.pointer1.x, game.input.pointer1.y);
 	}
 }
