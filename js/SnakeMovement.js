@@ -61,7 +61,7 @@ var playerMovement = {
 		updateInterval++;
 		
 		//limit the update rate so that the snake won't move every frame
-		if(updateInterval % 10 == 0)
+		if(updateInterval % 5 == 0)
 		{
 			//move the snake by placing the last square of the snake at the front
 			//of the snake to create the illusion of a moving snake.
